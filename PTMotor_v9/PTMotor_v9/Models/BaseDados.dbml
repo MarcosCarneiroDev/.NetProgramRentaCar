@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="C:\USERS\MARCOS CARNEIRO\DESKTOP\PTMOTOR_V9\PTMOTOR_V9\APP_DATA\PTMOTOR.MDF" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-FBMCOVQ1;Initial Catalog=&quot;C:\USERS\MARCOS CARNEIRO\DESKTOP\PTMOTOR_V9\PTMOTOR_V9\APP_DATA\PTMOTOR.MDF&quot;;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="C__USERS_MARCOS_CARNEIRO_DESKTOP_PTMOTOR_V9_PTMOTOR_V9_APP_DATA_PTMOTOR_MDFConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Aluguer" Member="Aluguers">
+    <Type Name="Aluguer">
+      <Column Name="Alu_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Alu_Data" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Alu_Pes_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Aluguer_LinhaAluguer" Member="LinhaAluguers" ThisKey="Alu_Id" OtherKey="LinA_Alu_Id" Type="LinhaAluguer" />
+      <Association Name="Pessoa_Aluguer" Member="Pessoa" ThisKey="Alu_Pes_Id" OtherKey="Pes_Id" Type="Pessoa" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cilindrada" Member="Cilindradas">
+    <Type Name="Cilindrada">
+      <Column Name="Cil_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cil_Descricao" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="Cilindrada_Veiculo" Member="Veiculos" ThisKey="Cil_Id" OtherKey="Vei_Cil_Id" Type="Veiculo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DocumentoPessoa" Member="DocumentoPessoas">
+    <Type Name="DocumentoPessoa">
+      <Column Name="DocP_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocP_Caminho" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="DocP_Pes_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Pessoa_DocumentoPessoa" Member="Pessoa" ThisKey="DocP_Pes_Id" OtherKey="Pes_Id" Type="Pessoa" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FichaVeiculo" Member="FichaVeiculos">
+    <Type Name="FichaVeiculo">
+      <Column Name="FicV_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FicV_DataCompra" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FicV_PrecoCompra" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="FicV_Vei_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FicV_Loc_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="FichaVeiculo_LinhaAluguer" Member="LinhaAluguers" ThisKey="FicV_Id" OtherKey="LinA_FicV_Id" Type="LinhaAluguer" />
+      <Association Name="Localizacao_FichaVeiculo" Member="Localizacao" ThisKey="FicV_Loc_Id" OtherKey="Loc_Id" Type="Localizacao" IsForeignKey="true" />
+      <Association Name="Veiculo_FichaVeiculo" Member="Veiculo" ThisKey="FicV_Vei_Id" OtherKey="Vei_Id" Type="Veiculo" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GrupoUtilizador" Member="GrupoUtilizadors">
+    <Type Name="GrupoUtilizador">
+      <Column Name="Gru_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Gru_Descricao" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="GrupoUtilizador_GrupoUtilizador_Menu" Member="GrupoUtilizador_Menus" ThisKey="Gru_Id" OtherKey="GruMen_Gru_Id" Type="GrupoUtilizador_Menu" />
+      <Association Name="GrupoUtilizador_Pessoa" Member="Pessoas" ThisKey="Gru_Id" OtherKey="Pes_Gru_Id" Type="Pessoa" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GrupoUtilizador_Menu" Member="GrupoUtilizador_Menus">
+    <Type Name="GrupoUtilizador_Menu">
+      <Column Name="GruMen_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GruMen_Gru_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GruMen_Men_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="GrupoUtilizador_GrupoUtilizador_Menu" Member="GrupoUtilizador" ThisKey="GruMen_Gru_Id" OtherKey="Gru_Id" Type="GrupoUtilizador" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LinhaAluguer" Member="LinhaAluguers">
+    <Type Name="LinhaAluguer">
+      <Column Name="LinA_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LinA_FicV_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LinA_DataLevantamento" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LinA_DataEntrega" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LinA_Alu_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="FichaVeiculo_LinhaAluguer" Member="FichaVeiculo" ThisKey="LinA_FicV_Id" OtherKey="FicV_Id" Type="FichaVeiculo" IsForeignKey="true" />
+      <Association Name="Aluguer_LinhaAluguer" Member="Aluguer" ThisKey="LinA_Alu_Id" OtherKey="Alu_Id" Type="Aluguer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Localizacao" Member="Localizacaos">
+    <Type Name="Localizacao">
+      <Column Name="Loc_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Loc_Descricao" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Loc_Rua" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Loc_CodPostal" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Loc_Localidade" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Loc_Contactos" Type="System.String" DbType="NVarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="Loc_Mail" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="Localizacao_FichaVeiculo" Member="FichaVeiculos" ThisKey="Loc_Id" OtherKey="FicV_Loc_Id" Type="FichaVeiculo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Marca" Member="Marcas">
+    <Type Name="Marca">
+      <Column Name="Mar_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Mar_Descricao" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="Marca_Modelo" Member="Modelos" ThisKey="Mar_Id" OtherKey="Mod_Mar_Id" Type="Modelo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Modelo" Member="Modelos">
+    <Type Name="Modelo">
+      <Column Name="Mod_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Mod_Descricao" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Mod_Mar_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Modelo_Veiculo" Member="Veiculos" ThisKey="Mod_Id" OtherKey="Vei_Mod_Id" Type="Veiculo" />
+      <Association Name="Marca_Modelo" Member="Marca" ThisKey="Mod_Mar_Id" OtherKey="Mar_Id" Type="Marca" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pessoa" Member="Pessoas">
+    <Type Name="Pessoa">
+      <Column Name="Pes_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Pes_Login" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Pes_Password" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Pes_Nif" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Pes_CC" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Pes_CartaConducao" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Pes_Nome" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Pes_Rua" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Pes_CodPostal" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="Pes_Localidade" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Pes_Contacto" Type="System.String" DbType="NVarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="Pes_Mail" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Pes_Gru_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Pessoa_Aluguer" Member="Aluguers" ThisKey="Pes_Id" OtherKey="Alu_Pes_Id" Type="Aluguer" />
+      <Association Name="Pessoa_DocumentoPessoa" Member="DocumentoPessoas" ThisKey="Pes_Id" OtherKey="DocP_Pes_Id" Type="DocumentoPessoa" />
+      <Association Name="GrupoUtilizador_Pessoa" Member="GrupoUtilizador" ThisKey="Pes_Gru_Id" OtherKey="Gru_Id" Type="GrupoUtilizador" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipoCombustivel" Member="TipoCombustivels">
+    <Type Name="TipoCombustivel">
+      <Column Name="TipC_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TipC_Descricao" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="TipoCombustivel_Veiculo" Member="Veiculos" ThisKey="TipC_Id" OtherKey="Vei_TipC_Id" Type="Veiculo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipoVeiculo" Member="TipoVeiculos">
+    <Type Name="TipoVeiculo">
+      <Column Name="TipV_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TipV_Descricao" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="TipoVeiculo_Veiculo" Member="Veiculos" ThisKey="TipV_Id" OtherKey="Vei_TipV_Id" Type="Veiculo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Veiculo" Member="Veiculos">
+    <Type Name="Veiculo">
+      <Column Name="Vei_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Vei_Matricula" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Vei_Descricao" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Vei_Mod_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Vei_Cil_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Vei_TipC_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Vei_TipV_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Veiculo_FichaVeiculo" Member="FichaVeiculos" ThisKey="Vei_Id" OtherKey="FicV_Vei_Id" Type="FichaVeiculo" />
+      <Association Name="Cilindrada_Veiculo" Member="Cilindrada" ThisKey="Vei_Cil_Id" OtherKey="Cil_Id" Type="Cilindrada" IsForeignKey="true" />
+      <Association Name="Modelo_Veiculo" Member="Modelo" ThisKey="Vei_Mod_Id" OtherKey="Mod_Id" Type="Modelo" IsForeignKey="true" />
+      <Association Name="TipoCombustivel_Veiculo" Member="TipoCombustivel" ThisKey="Vei_TipC_Id" OtherKey="TipC_Id" Type="TipoCombustivel" IsForeignKey="true" />
+      <Association Name="TipoVeiculo_Veiculo" Member="TipoVeiculo" ThisKey="Vei_TipV_Id" OtherKey="TipV_Id" Type="TipoVeiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

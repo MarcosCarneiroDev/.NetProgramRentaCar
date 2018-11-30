@@ -1,0 +1,41 @@
+﻿@model PTMotor_v9.Models.Marca
+
+
+@{
+    ViewBag.Title = "Edit";
+    //Layout = "~/Views/Shared/_LayoutBackend.cshtml";
+}
+
+<h2 style="margin-top:7%;">Editar Marca</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+
+        <br />
+
+        <div class="editor-label">
+            @*@Html.LabelFor("Descrição:")*@
+            Descrição:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mar_Descricao)
+            @Html.ValidationMessageFor(model => model.Mar_Descricao)
+        </div>
+        <br />
+        <p>
+            <input type="submit" value="Guardar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar à listagem", "Index")
+</div>
+
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@

@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "EditarPerfil";
+    Layout = "~/Views/Shared/_LayoutBackend.cshtml";
+}
+
+<html>
+<body id="page2">
+    <div id="main">
+        <div id="content">
+            <div class="indent">
+                <div class="col-1">
+                    <h3><b>Editar Conta de</b> Administrador</h3>
+                    <p>Todos os campo são obrigatórios.</p>
+                    <fieldset>
+                        <b>Nome Completo </b>
+                        <p><input id="nome" type="text" size="94%" /></p>
+                        <p>
+                            <b>Telefone/Telemóvel</b>
+                            <input id="contacto1" type="text" size=15% />
+                            <input id="contacto2" type="text" size=15% /> Um contacto obrigatório.
+                        </p>
+                        <p>
+                            <b>Email</b>
+                            <input id="email" type="email" size=87% />
+                        </p>
+
+                        <p>
+                            <b>Nome de Utilizador </b>
+                            <input id="nomeutilizador" type="text" size=20% maxlength="10" />
+                            &nbsp
+                            <b> Password </b>
+                            <input id="password" type="password" size=20% maxlength="10" />
+                        </p>
+                    </fieldset>
+                    <a href="Index" class="link1" style="margin-left:80"><em><b>Cancelar</b></em></a>
+                    <a href="#" class="link1" style="margin-left:120"><em><b>Guardar</b></em></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

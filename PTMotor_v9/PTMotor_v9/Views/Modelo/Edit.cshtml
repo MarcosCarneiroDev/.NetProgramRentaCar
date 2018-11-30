@@ -1,0 +1,43 @@
+﻿@model PTMotor_v9.Models.Modelo
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutBackend.cshtml";
+}
+
+<h2 style="margin-top:7%;">Editar Modelo</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    
+
+@Html.HiddenFor(model => model.Mod_Id)
+
+        <div class="editor-field">
+           @Html.EditorFor(model => model.Mod_Descricao)
+            @Html.ValidationMessageFor(model => model.Mod_Descricao)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Marca")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Mod_Mar_Id, (SelectList)ViewBag.Marcas, "--Escolha uma marca--" )
+            @Html.ValidationMessageFor(model => model.Mod_Mar_Id)
+</div>
+    <br/>
+        <p>
+        <input type="submit" value="Guardar" />
+        </p>
+</fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

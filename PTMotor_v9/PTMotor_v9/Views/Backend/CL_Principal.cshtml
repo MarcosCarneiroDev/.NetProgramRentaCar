@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "CL_Principal";
+    Layout = "~/Views/Shared/_LayoutBackend.cshtml";
+}
+
+<html>
+<body id="page1">
+    <div id="main">
+        <div id="content">
+            <div class="indent">
+                <div class="col-1">
+                    <h3><b>Listagem de</b> Clientes</h3>
+                    <p></p>
+                    <div class="img-box1">
+                        <br /><br />
+                        <a href="CL_Novo" class="link1"><em><b>Adiccionar Novo</b></em></a>
+                        <a href="#" class="link1" style="margin-left:60"><em><b>Listagem:</b></em></a>
+                        <select id="Select1" style="height:23">
+                            <option>Todos</option>
+                            <option>Pendentes</option>
+                            <option>Aprovados</option>
+                            <option>Recusados</option>
+                        </select>
+                        <input id="ir" type="submit" value=" IR " style="height:23" />
+                        <br /><br /><br />
+                        <p>username contacto email1 <a href="CL_Editar"><b>EDITAR</b></a> </p>
+                        <p>username contacto email2 <a href="CL_Editar"><b>EDITAR</b></a> </p>
+                        <p>username contacto email3 <a href="CL_Editar"><b>EDITAR</b></a> </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

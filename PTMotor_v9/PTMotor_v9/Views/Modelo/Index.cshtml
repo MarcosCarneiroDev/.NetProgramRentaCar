@@ -1,0 +1,47 @@
+﻿@model  IEnumerable<PTMotor_v9.Models.Modelo>
+@*@model PTMotor_v9.Models.Modelo*@
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutBackend.cshtml";
+}
+
+<h2 style="margin-top:4.5%;">Listagem de Modelos</h2>
+
+<p>
+    @Html.ActionLink("Adicionar", "Create")
+</p>
+
+<table>
+    <tr>
+        <th style="display:none;">
+            @Html.DisplayNameFor(model => model.Mod_Id)
+        </th>
+        <th style="text-align:center;">
+            @*@Html.DisplayNameFor(model => model.Mar_Descricao)*@
+            @*@Html.DisplayNameFor("Marca")*@
+            Modelo
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="display:none;">
+                @Html.DisplayFor(modelItem => item.Mod_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mod_Descricao)
+            </td>
+
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Mod_Id }) |
+                @Html.ActionLink("Apagar", "Delete", new { id = item.Mod_Id })
+                @Html.ActionLink("Carros", "Details", new { id = item.Mod_Id }) |
+            </td>
+        </tr>
+    }
+
+</table>

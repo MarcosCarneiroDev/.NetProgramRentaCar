@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Veiculos";
+    Layout = "~/Views/Shared/_LayoutFrontend.cshtml";
+}
+
+<html>
+<body id="page3">
+    <div id="main">
+        <div id="content">
+            <div class="box">
+                <div class="border-bot">
+                    <div class="right-bot-corner">
+                        <div class="left-bot-corner">
+                            <div class="inner">
+                                <div class="box1 alt">
+                                    <div class="inner">
+                                        <h4><b>Os nossos</b> Veículos</h4>
+                                        <p class="p0">Os nosso veículos são topo de gama. Alugamos diversos classes como por exemplo, Motociclos, Veículos Ligeiro e Veículos Pesados.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="indent">
+                <div class="col-1">
+                    <h3>1 Pesquisa </h3>
+                    <p>
+                        <label>Levantamento:</label>
+                        <input id="datahora_levantamento" type="datetime-local" />
+                        <label>Devolução:</label>
+                        <input id="datahora_devolucao" type="datetime-local" />
+                    </p>
+                    <p>
+                        Local de entrega
+                        <select id="entrega">
+                            <option>Lisboa</option>
+
+                        </select>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        Local de Devolução
+                        <select id="devolucao">
+                            <option>Porto</option>
+
+                        </select>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input id="pesquisar" type="button" value="Pesquisar" />
+                    </p>
+                    <p>
+                        <b>Ordenar Por: </b>&nbsp Marca &nbsp | &nbsp Modelo &nbsp | &nbsp Combustivel &nbsp | &nbsp KM &nbsp | &nbsp Preço
+                    </p>
+                    <ul class="list">
+                        <li>
+                            <img src="~/Content/images/3page-img1.jpg" alt="" /><a href="article.html">Marca Modelo 1</a>
+                            <br />
+                            <b>Ano de Fabrico: </b>
+                            <label>2000</label>
+                            <br />
+                            <b>Combustível: </b>
+                            <label>Gasolina</label>
+                            <br />
+                            <b>Kilómetros: </b>
+                            <label>16500</label>
+                            <br />
+                            <b>Notas Adiccionais: </b>
+                            <label>Carro todo partido</label>
+                            <br />
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Preço: </b>
+                            € <label>12000</label>
+                            <br />
+                            <a href="Veiculos_Pagamento" class="link1"><em><b>Reserve Já!</b></em></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

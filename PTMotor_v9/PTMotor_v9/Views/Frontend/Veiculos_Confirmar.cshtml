@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Veiculos_Confirmar";
+    Layout = "~/Views/Shared/_LayoutFrontend.cshtml";
+}
+
+<html>
+<body id="page3">
+    <div id="main">
+        <div id="content">
+            <div class="box">
+                <div class="border-bot">
+                    <div class="right-bot-corner">
+                        <div class="left-bot-corner">
+                            <div class="inner">
+                                <div class="box1 alt">
+                                    <div class="inner">
+                                        <h4><b>Os nossos</b> Veículos</h4>
+                                        <p class="p0">Os nosso veículos são topo de gama. Alugamos diversos classes como por exemplo, Motociclos, Veículos Ligeiro e Veículos Pesados.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="indent">
+                <div class="col-1">
+                    <h3>1 Pesquisa<b> > </b>2 Pagamento<b> > </b>3 Confirmar</h3>
+
+                    <ul class="list">
+                        <li>
+                            <img src="~/Content/images/3page-img1.jpg" alt="" /><a href="article.html">Marca Modelo 1</a>
+                            <br />
+                            <b>Ano de Fabrico: </b>
+                            <label>2000</label>
+                            <br />
+                            <b>Combustível: </b>
+                            <label>Gasolina</label>
+                            <br />
+                            <b>Kilómetros: </b>
+                            <label>16500</label>
+                            <br />
+                            <b>Notas Adiccionais: </b>
+                            <label>Carro todo partido</label>
+                            <br />
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Preço: </b>
+                            € <label>12000</label>
+                            <center>
+                                <p>
+                                    <b>Tipo de Pagamento</b>
+                                    <select id="pagamento">
+                                        <option>Visa</option>
+                                        <option>American Express</option>
+                                        <option>Master Card</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <b>Titular do Cartão</b>
+                                    <input id="titular_cartao" type="text" />
+                                </p>
+                                <p>
+                                    <b>Número do Cartão</b>
+                                    <input id="numero_cartao" type="text" />
+                                </p>
+                            </center>
+                            <fieldset>
+                                <b>Nome Completo </b>
+                                <p><input id="nome" type="text" size="94%" /></p>
+                                <b>Morada </b>
+                                <p><input id="morada" type="text" size=94% /></p>
+                                <p>
+                                    <b>Código Postal </b>
+                                    <input id="cod_postal1" type="text" size=10% />
+                                    <input id="cod_postal2" type="text" size=5% />
+                                    &nbsp
+                                    <b>Localidade </b>
+                                    <input id="localidade " type="text" size=33% />
+                                </p>
+                                <p>
+                                    <b>BI/Cartão de Cidadão </b>
+                                    <input id="bi" type="text" size=27% />
+                                    &nbsp
+                                    <b>NIF </b>
+                                    <input id="nif" type="text" size=27% />
+                                </p>
+                                <p>
+                                    <b>Telefone/Telemóvel</b>
+                                    <input id="contacto1" type="text" size=15% />
+                                    <input id="contacto2" type="text" size=15% /> Um contacto obrigatório.
+                                </p>
+                                <p>
+                                    <b>Email</b>
+                                    <input id="email" type="email" size=87% />
+                                </p>
+                            </fieldset>
+                            <br />
+                            <a href="Veiculos_Pagamentos" class="link1" style="margin-left:100"><em><b>Para Trás</b></em></a>
+                            <a href="Veiculos_Sucesso" class="link1" style="margin-left:100"><em><b>Continuar</b></em></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

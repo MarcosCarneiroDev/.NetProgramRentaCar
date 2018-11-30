@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "CL_Editar";
+    Layout = "~/Views/Shared/_LayoutBackend.cshtml";
+}
+
+<html>
+<body id="page2">
+    <div id="main">
+        <div id="content">
+            <div class="indent">
+                <div class="col-1">
+                    <h3><b>Detalhes de</b> Cliente</h3>
+                    <p>Todos os campo são obrigatórios.</p>
+                    <fieldset>
+                        <b>Nome Completo </b>
+                        <p><input id="nome" type="text" size="94%" /></p>
+                        <b>Morada </b>
+                        <p><input id="morada" type="text" size=94% /></p>
+                        <p>
+                            <b>Código Postal </b>
+                            <input id="cod_postal1" type="text" size=10% />
+                            <input id="cod_postal2" type="text" size=5% />
+                            &nbsp
+                            <b>Localidade </b>
+                            <input id="localidade " type="text" size=33% />
+                        </p>
+                        <p>
+                            <b>BI/Cartão de Cidadão </b>
+                            <input id="bi" type="text" size=27% />
+                            &nbsp
+                            <b>NIF </b>
+                            <input id="nif" type="text" size=27% />
+                        </p>
+                        <p>
+                            <b>Telefone/Telemóvel</b>
+                            <input id="contacto1" type="text" size=15% />
+                            <input id="contacto2" type="text" size=15% /> Um contacto obrigatório.
+                        </p>
+                        <p>
+                            <b>Email</b>
+                            <input id="email" type="email" size=87% />
+                        </p>
+                        <p>
+                            <b>Documentos Digitalizados (BI + Carta de Condução) </b>
+                            <input id="docs" type="file" size=78% />
+                        </p>
+                        <p>
+                            <b>Nome de Utilizador </b>
+                            <input id="nomeutilizador" type="text" size=20% maxlength="10" />
+                            &nbsp
+                            <b> Password </b>
+                            <input id="password" type="password" size=20% maxlength="10" />
+                        </p>
+
+                        <p>
+                            <b>Aprovado a Conduzir: </b>
+                            Categoria A
+                            <input id="Checkbox1" type="checkbox" />
+                            &nbsp
+                            Categoria B
+                            <input id="Checkbox2" type="checkbox" />
+                            &nbsp
+                            Categoria C
+                            <input id="Checkbox3" type="checkbox" />
+                        </p>
+                        <b>Histórico: </b>
+                        <p>
+                            <textarea id="cl_historico" rows="3" cols="96%" readonly="readonly"></textarea>
+                        </p>
+                    </fieldset>
+                    <a href="CL_Principal" class="link1" style="margin-left:35"><em><b>Cancelar</b></em></a>
+                    <a href="CL_Eliminar" class="link1" style="margin-left:65"><em><b>Eliminar</b></em></a>
+                    <a href="#" class="link1" style="margin-left:75"><em><b>Guardar</b></em></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

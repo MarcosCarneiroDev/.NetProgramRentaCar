@@ -1,0 +1,149 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - PT Motor</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="~/Content/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="~/Content/js/cufon-yui.js" type="text/javascript"></script>
+    <script src="~/Content/js/cufon-replace.js" type="text/javascript"></script>
+    <script src="~/Content/js/Myriad_Pro_400.font.js" type="text/javascript"></script>
+    <script src="~/Content/js/Myriad_Pro_600.font.js" type="text/javascript"></script>
+    <script src="~/Content/js/NewsGoth_BT_400.font.js" type="text/javascript"></script>
+    <script src="~/Content/js/NewsGoth_BT_700.font.js" type="text/javascript"></script>
+    <script src="~/Content/js/NewsGoth_Dm_BT_400.font.js" type="text/javascript"></script>
+    <script src="~/Content/js/script.js" type="text/javascript"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body id="page1">
+    <div id="main">
+        <div id="header">
+            <div class="row-1">
+                <div class="fleft"><a href="#"><img src="~/Content/images/logo.gif" alt="" /></a></div>
+                <div class="fright">
+                    <ul>
+                        <li><a href="#"><img src="~/Content/images/icon1.gif" alt="" /></a></li>
+                        <li><a href="#"><img src="~/Content/images/icon2.gif" alt="" /></a></li>
+                        <li><a href="#"><img src="~/Content/images/icon3.gif" alt="" /></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row-2">
+                <div class="left">
+                    <ul>
+                        <li>@Html.ActionLink("Inicio", "../Home/Index")</li>
+                        <li>@Html.ActionLink("Sobre", "../Home/Sobre")</li>
+                        <li>@Html.ActionLink("Veiculos", "../Home/Veiculos")</li>
+                        <li>@Html.ActionLink("Contacto", "../Home/Contacto")</li>
+                        <li>@Html.ActionLink("Mapa do Site", "../Home/Sitemap")</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row-3">
+                <div class="inside">
+                    <h2>Procure aqui <b>o seu veículo</b></h2>
+                    <form action="#" id="search-form">
+                        <fieldset>
+                            <p>
+                                <label>Levantamento:</label>
+                                <input id="datahora_levantamento" type="datetime-local" />
+                            </p>
+                            <br /><br /><br />
+                            <p>
+                                <label>Devolução:</label>
+                                <input id="datahora_devolucao" type="datetime-local" style="margin-left:30" />
+                            </p>
+                        </fieldset>
+                        <center> <a href="../Frontend/Veiculos" class="link1"><em><b>Procurar!</b></em></a> </center>
+                    </form>
+                </div>
+            </div>
+            <div class="extra"><img src="~/Content/images/header-img.png" alt="" /></div>
+        </div>
+
+        @RenderBody()
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+
+        <!--Coluna da esquerda-->
+
+        <div id="content">
+            <div class="indent">
+                <div class="col-2">
+                    <div class="box2">
+                        <div class="border-top">
+                            <div class="left-top-corner">
+                                <div class="right-top-corner">
+                                    <div class="inner">
+                                        <h4><b>Últimas</b> Notícias</h4>
+                                        <ul class="news">
+                                            <li>
+                                                <a href="#">13 de Outubro, 2013</a>
+                                                <p>Fim da primeira fase de desenvolvimento da plataforma.</p>
+                                            </li>
+                                            <li>
+                                                <a href="#">10 de Novembro, 2013</a>
+                                                <p>Fim da segunda fase de desenvolvimento da plataforma.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box3">
+                        <div class="right-bot-corner">
+                            <div class="left-bot-corner">
+                                <div class="inner">
+                                    <h4>Administrador</h4>
+                                    <form action="#" id="login-form" >
+                                        <fieldset>
+                                            <ul>
+                                                <li>@Html.ActionLink("Editar Perfil", "EditarPerfil")</li>
+                                                <li>@Html.ActionLink("Centro de Notificações", "Notificacoes")</li>
+                                                <li>@Html.ActionLink("Manutenção de Clientes", "CL_Principal")</li>
+                                                <li>@Html.ActionLink("Manutenção de Veículos", "Vei_Principal")</li>
+                                                <div class="field1" >
+                                                    <a href="../Home/"><em><b>Sair<span>Sair</span></b></em></a>
+                                                </div>
+                                            </ul>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Footer-->
+
+        <div class="wrapper">
+            <div id="footer">
+                <div class="footer-nav">
+                    <div class="left">
+                        <ul>
+                            <li>@Html.ActionLink("Inicio", "../Home/Index")</li>
+                            <li>@Html.ActionLink("Sobre", "../Home/Sobre")</li>
+                            <li>@Html.ActionLink("Veiculos", "../Home/Veiculos")</li>
+                            <li>@Html.ActionLink("Contacto", "../Home/Contacto")</li>
+                            <li>@Html.ActionLink("Mapa", "../Home/Sitemap")</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footerlink">
+                    <p class="lf">Copyright &copy; 2013 <a href="#">PT Motor</a> - Todos os Direitos Reservados</p>
+                    <p class="rf">
+                        Desenvolvido para a UC de Laboratório de TIC IV
+                        <div style="clear:both;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript"> Cufon.now(); </script>
+</body>
+</html>

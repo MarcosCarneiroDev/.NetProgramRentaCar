@@ -1,0 +1,93 @@
+﻿@model PTMotor_v9.Models.Pessoa
+
+@{
+    ViewBag.Title = "Utilizador";
+}
+
+<h2>Registar</h2>
+
+   <div id="main">
+        <div id="content">
+            <div class="indent">
+                <div class="col-1">
+@using (Html.BeginForm("Create", "Utilizador",FormMethod.Post)) {
+                    <h3><b>Edite o seu</b> Perfil</h3>
+                    <p>Todos os campo são obrigatórios.</p>
+                    <fieldset>
+                        <b>Nome Completo </b>
+                        @*<p><input name="umNome" id="nome" type="text" size="94%" /></p>*@
+                        @Html.EditorFor(Model => Model.Pes_Nome)
+                        <b>Morada </b>
+                        @*<p><input id="morada" type="text" size=94% /></p>*@
+                        @Html.EditorFor(Model => Model.Pes_Rua)
+                        <p>
+                            <b>Código Postal </b>
+                            @*<input id="cod_postal1" type="text" size=10% />*@
+                            @Html.EditorFor(Model => Model.Pes_CodPostal)
+                            &nbsp
+                            <b>Localidade </b>
+                            @*<input id="localidade " type="text" size=33% />*@
+                            @Html.EditorFor(Model => Model.Pes_Localidade)
+                        </p>
+                        <p>
+                            <b>BI/Cartão de Cidadão </b>
+                            @*<input id="bi" type="text" size=27% />*@
+                            @Html.EditorFor(Model => Model.Pes_CC)
+                            &nbsp
+                            <b>NIF </b>
+                            @*<input id="nif" type="text" size=27% />*@
+                            @Html.EditorFor(Model => Model.Pes_Nif)
+                            
+                        </p>
+                        <p>
+                            <b>Telefone/Telemóvel</b>
+                            @*<input id="contacto1" type="text" size=15% />
+                            <input id="contacto2" type="text" size=15% /> Um contacto obrigatório.*@
+                            @Html.EditorFor(Model => Model.Pes_Contacto)
+                        </p>
+                        <p>
+                            <b>Email</b>
+                            @*<input id="email" type="email" size=87% />*@
+                            @Html.EditorFor(Model => Model.Pes_Mail)
+                        </p>
+                        <p>
+                            <b>Documentos Digitalizados (BI + Carta de Condução) </b>
+                            <input id="docs" type="file" size=78% />
+                        </p>
+                        <p>
+                            <b>Nome de Utilizador </b>
+                            @*<input id="nomeutilizador" type="text" size=20% maxlength="10" />*@
+                            @Html.EditorFor(Model => Model.Pes_Login)
+                            &nbsp
+                            <b> Password </b>
+                            @*<input  id="password" type="password" size=20% maxlength="10" />*@
+                           @* @Html.EditorFor(Model => Model.Pes_Password)*@
+                            @Html.PasswordFor(Model => Model.Pes_Password)
+
+                        </p>
+                    </fieldset>
+    
+
+                    <input id="Button1" type="submit" value="Guardar" />
+           
+       @*<a href="#" class="link1" style="margin-left:90"><em><b>Cancelar</b></em></a>*@
+                    @*<a href="#" class="link1" style="margin-left:140" ><em><b>Registar</b></em></a>*@
+
+}  
+        
+      @*<div class="link1" style="margin-left: 90;">
+            <b>
+                @Html.ActionLink("Cancelar", "Index", "Home", null, new { @class="link1"})
+                    </b>
+          </div>
+    
+    <div class="link1" style="margin-left: 140;">
+            <b>
+                @Html.ActionLink("Registar", "RegistarUtilizador", "Home", new {nome=umNome.Value}, new { @class = "link1" })
+                    </b>
+          </div>*@
+
+                </div>
+            </div>
+        </div>
+    </div>

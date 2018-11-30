@@ -1,0 +1,158 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="~/Content/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="~/Content/js/cufon-yui.js" type="text/javascript"></script>
+    <script src="~/Content/js/cufon-replace.js" type="text/javascript"></script>
+    <script src="~/Content/js/Myriad_Pro_400.font.js" type="text/javascript"></script>
+    <script src="~/Content/js/Myriad_Pro_600.font.js" type="text/javascript"></script>
+    <script src="~/Content/js/NewsGoth_BT_400.font.js" type="text/javascript"></script>
+    <script src="~/Content/js/NewsGoth_BT_700.font.js" type="text/javascript"></script>
+    <script src="~/Content/js/NewsGoth_Dm_BT_400.font.js" type="text/javascript"></script>
+    <script src="~/Content/js/script.js" type="text/javascript"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body id="page1">
+    <div id="main">
+        <div id="header">
+            <div class="row-1">
+                <div class="fleft"><a href="#"><img src="~/Content/images/logo.gif" alt="" /></a></div>
+                <div class="fright">
+                    <ul>
+                        <li><a href="#"><img src="~/Content/images/icon1.gif" alt="" /></a></li>
+                        <li><a href="#"><img src="~/Content/images/icon2.gif" alt="" /></a></li>
+                        <li><a href="#"><img src="~/Content/images/icon3.gif" alt="" /></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row-2">
+                <div class="left">
+                    <ul>
+                        <li>@Html.ActionLink("Inicio", "../Home/Index")</li>
+                        <li>@Html.ActionLink("Sobre", "../Home/Sobre")</li>
+                        <li>@Html.ActionLink("Veiculos", "../Home/Veiculos")</li>
+                        <li>@Html.ActionLink("Contacto", "../Home/Contacto")</li>
+                        <li>@Html.ActionLink("Mapa do Site", "../Home/Sitemap")</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row-3">
+                <div class="inside">
+                    <h2>Procure aqui <b>o seu veículo</b></h2>
+                    <form action="#" id="search-form">
+                        <fieldset>
+                            <p>
+                                <label>Levantamento:</label>
+                                <input id="datahora_devolucao" type="datetime-local" />
+                            </p>
+                            <br/><br /><br />
+                            <p>
+                                <label>Devolução:</label>
+                                <input id="datahora_levantamento" type="datetime-local" style="margin-left:30" />
+                            </p>
+                        </fieldset>
+                        <center> <a href="../Home/Veiculos" class="link1"><em><b>Procurar!</b></em></a> </center>
+                    </form>
+                </div>
+            </div>
+            <div class="extra"><img src="~/Content/images/header-img.png" alt="" /></div>
+        </div>
+
+        @RenderBody()
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+
+        <!--Coluna da esquerda-->
+        
+        <div id="content">
+            <div class="indent">
+                <div class="col-2">
+                    <div class="box2">
+                        <div class="border-top">
+                            <div class="left-top-corner">
+                                <div class="right-top-corner">
+                                    <div class="inner">
+                                        <h4><b>Últimas</b> Notícias</h4>
+                                        <ul class="news">
+                                            <li>
+                                                <a href="#">16 de Julho, 2014</a>
+                                                <p>Desenvolvimento da plataforma.</p>
+                                            </li>                                                                                      
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+@using (Html.BeginForm("EfectuarLogin", "Home",FormMethod.Post)) {
+                    <div class="box3">
+                        <div class="right-bot-corner">
+                            <div class="left-bot-corner">
+                                <div class="inner">
+                                
+                                    <h4>Autenticação</h4>
+                                    <form action="#" id="login-form">
+                                        <fieldset>
+                                            <div class="field">
+                                                <label><b>Nome:</b></label>
+                                                <input type="text" name="TBNome" />
+                                            </div>
+                                            <div class="field">
+                                                <label>Password:</label>
+                                                <input type="password" name="TBPassword" />
+                                            </div>
+                                            <div class="field1">
+                                                <label class="extra">Lembrar:</label>
+                                                <input type="checkbox" class="extra" />
+                                                @*<a href="#"><em><b>Entrar<span>Entrar</span></b></em></a>*@
+                                                <input id="Button1" type="submit" value="Entrar" />
+                                            </div>
+                                        </fieldset>
+                                        <div class="link1" style="margin-left: 50;">
+                                            <b>
+                                                @Html.ActionLink("Registar", "../Utilizador/", new { @class = "link1" })
+                                            </b>
+                                        </div>
+                                    </form>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+}
+                </div>
+            </div>
+        </div>
+
+        <!--Footer-->
+
+        <div class="wrapper">
+            <div id="footer">
+                <div class="footer-nav">
+                    <div class="left">
+                        <ul>
+                            <li>@Html.ActionLink("Inicio", "../Home/Index")</li>
+                            <li>@Html.ActionLink("Sobre", "../Home/Sobre")</li>
+                            <li>@Html.ActionLink("Veiculos", "../Home/Veiculos")</li>
+                            <li>@Html.ActionLink("Contacto", "../Home/Contacto")</li>
+                            <li>@Html.ActionLink("Mapa", "../Home/Sitemap")</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footerlink">
+                    <p class="lf">Copyright &copy; 2014 <a href="#">PT Motor</a> - Todos os Direitos Reservados</p>
+                    <p class="rf">
+                        Desenvolvido para a UC de Laboratório Integrado IV
+                        <div style="clear:both;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript"> Cufon.now(); </script>
+</body>
+</html>

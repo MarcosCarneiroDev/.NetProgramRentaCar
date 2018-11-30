@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Vei_MarcasModelos";
+    Layout = "~/Views/Shared/_LayoutBackend.cshtml";
+}
+
+<html>
+<body id="page1">
+    <div id="main">
+        <div id="content">
+            <div class="indent">
+                <div class="col-1">
+                    <h3><b>Listagem de </b> Marcas e Modelos</h3>
+                    <fieldset>
+                        <form>
+                            <p>
+                                
+                                <b>Marca </b>
+                                <input id="marca" type="text" size=18% maxlength="20" />
+                                <input id="add_marca" type="button" value=" INSERIR " />
+                            </p>
+                            <p>
+                                <b>Marca </b>
+                                <select id="Select1">
+                                    <option></option>
+
+                                </select>
+                                <b>Modelo</b>
+                                <input id="modelo" type="text" size=18% maxlength="20" />
+                                <input id="add_modelo" type="button" value=" INSERIR " />
+                            </p>
+                        </form>
+                        <p>
+
+                            <textarea id="marcas" rows="20" cols="45%" ></textarea>
+                            <textarea id="modelos" rows="20" cols="45%"></textarea>
+                            
+                            <input id="add_modelo" type="button" value=" EDITAR " style="margin-left:370" />
+                            <input id="add_modelo" type="button" value=" ELIMINAR " />
+                        </p>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

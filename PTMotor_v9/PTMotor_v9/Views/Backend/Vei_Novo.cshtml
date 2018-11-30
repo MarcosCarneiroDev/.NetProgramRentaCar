@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Vei_Novo";
+    Layout = "~/Views/Shared/_LayoutBackend.cshtml";
+}
+
+<html>
+<body id="page1">
+    <div id="main">
+        <div id="content">
+            <div class="indent">
+                <div class="col-1">
+                    <h3><b>Veículo </b> Novo</h3>
+                    <p>Todos os campo são obrigatórios.</p>
+                    <fieldset>
+                        <p><b>Matrícula </b>
+                            <input id="matricula1" type="text" size="1" maxlength="2" /> -
+                            <input id="matricula2" type="text" size="1" maxlength="2" /> -
+                            <input id="matricula3" type="text" size="1" maxlength="2" />
+                            &nbsp 
+                            <b> Ano de Fabrico</b>
+                            <select id="ano_fabrico">
+                                <option>2000</option>
+                                <option>2001</option>
+                                <option>2002</option>
+                                <option>2003</option>
+                            </select>
+                            <b> Combustível</b>
+                            <select id="combustivel">
+                                <option>Gasolina</option>
+                                <option>Gasóleo</option>
+                                <option>GPL</option>
+                            </select>
+                        </p>
+                        <p>
+                            <b> Marca</b>
+                            <select id="marca" style="min-width:116px">
+                                <option></option>
+                            </select>
+                            &nbsp
+                            <b> Modelo</b>
+                            <select id="modelo" style="min-width:116px">
+                                <option></option>
+                            </select>
+                            &nbsp
+                            <b> KM</b>
+                            <input id="km" type="text" style="min-width:116px" maxlength="6" />
+                        </p>
+                        <p>
+                            <b> Preço €</b>
+                            <input id="preco" type="text" size=17% />
+                            &nbsp &nbsp
+                            <b> Tipo</b>
+                            <select id="tipo">
+                                <option>Cat.A (Motociclo)</option>
+                                <option>Cat.B (Ligeiro)</option>
+                                <option>Cat.C (Pesado)</option>
+                            </select>
+                            &nbsp
+                            <b> Estado</b>
+                            <select id="estado">
+                                <option>Disponível</option>
+                                <option>Reservado</option>
+                                <option>Entregue</option>
+                                <option>Abatido</option>
+                                <option>Não Disponivei</option>
+                            </select>
+                        </p>
+                        <p>
+                            <b>Fotografia: </b>
+                            <input id="fotografia" type="file" size=78% />
+                        </p>
+                        <p>
+                            <b> Notas Adiccionais</b><br/>
+                            <textarea id="notasadiccionais" rows="3" cols="96%"></textarea>
+                        </p>
+                        <p>
+                            <b>OUTRAS NOTIFICAÇÕES</b><br />
+                            <b>Imposto Automóvel:</b>
+                            <input id="notificacoes1" type="date" />
+                            &nbsp &nbsp &nbsp <b> Seguro:</b>
+                            <input id="notificacoes2" type="date" /> 
+                        </p>
+                        <p>
+                            <b>Vistoria:</b>
+                            <input id="notificacoes3" type="date" />
+                            &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <b> Revisão:</b>
+                            <input id="notificacoes4" type="date" />
+                        </p>
+                    </fieldset>
+                    <a href="Vei_Principal" class="link1" style="margin-left:15"><em><b>Cancelar</b></em></a>
+                    <a href="#" class="link1" style="margin-left:30"><em><b>Criar e Fechar</b></em></a>
+                    <a href="#" class="link1" style="margin-left:35"><em><b>Criar e Novo</b></em></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

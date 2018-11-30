@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Vei_Principal";
+    Layout = "~/Views/Shared/_LayoutBackend.cshtml";
+}
+
+<html>
+<body id="page1">
+    <div id="main">
+        <div id="content">
+            <div class="indent">
+                <div class="col-1">
+                    <h3><b></b> Veículos</h3>
+                    <p></p>
+                    <div class="img-box1">
+                        <br /><br />
+                        <a href="Vei_Novo" class="link1"><em><b>Novo</b></em></a>
+                        <a href="Vei_Marcas" class="link1" style="margin-left:10"><em><b>Marcas/Modelos</b></em></a>
+                        @*<a href="Vei_Modelos" class="link1" style="margin-left:10"><em><b>Modelos</b></em></a>*@
+                        <a href="#" class="link1" style="margin-left:10"><em><b>Listagem:</b></em></a>
+                        <select id="Select1" style="height:23">
+                            <option>Todos</option>
+                            <option>Disponíveis</option>
+                            <option>Reservados</option>
+                            <option>Entregues</option>
+                            <option>Abatidos</option>
+                            <option>Não Disponiveis</option>
+                        </select>
+                        <input id="ir" type="submit" value=" IR " style="height:23" />
+                        <br /><br /><br />
+                        <p>categoria matricula marca modelo1 <a href="Vei_Editar"><b>EDITAR</b></a> </p>
+                        <p>categoria matricula marca modelo2 <a href="Vei_Editar"><b>EDITAR</b></a> </p>
+                        <p>categoria matricula marca modelo3 <a href="Vei_Editar"><b>EDITAR</b></a> </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

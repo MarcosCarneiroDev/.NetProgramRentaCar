@@ -1,0 +1,44 @@
+﻿@model  IEnumerable<PTMotor_v9.Models.Marca>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutBackend.cshtml";
+}
+
+<h2 style="margin-top:4.5%;">Listagem de Marcas</h2>
+
+<p>
+    @Html.ActionLink("Adicionar", "Create")
+</p>
+<table>
+    <tr>
+        <th style="display:none;">
+            @Html.DisplayNameFor(model => model.Mar_Id)
+        </th>
+        <th style="text-align:center;">
+            @*@Html.DisplayNameFor(model => model.Mar_Descricao)*@
+            @*@Html.DisplayNameFor("Marca")*@
+            Marca
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="display:none;">
+                @Html.DisplayFor(modelItem => item.Mar_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mar_Descricao)
+            </td>
+
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Mar_Id }) |
+                @Html.ActionLink("Apagar", "Delete", new { id = item.Mar_Id })
+                @Html.ActionLink("Modelos", "Details", new { id = item.Mar_Id }) |
+            </td>
+        </tr>
+    }
+
+</table>
